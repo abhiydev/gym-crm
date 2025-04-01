@@ -72,10 +72,10 @@ export default function Home() {
     },
   ];
 
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const images = ["/hero1.jpg", "/hero2.jpg", "/hero3.jpg"];
+  const [currentIndex, setCurrentIndex] = useState<number>(0);
+  const images: string[] = ["/hero1.jpg", "/hero2.jpg", "/hero3.jpg"];
   const timerRef = useRef<NodeJS.Timeout | null>(null);
-  const [isMobile, setIsMobile] = useState(false);
+  const [isMobile, setIsMobile] = useState<boolean>(false);
 
   useEffect(() => {
     const handleResize = () => {
@@ -116,7 +116,7 @@ export default function Home() {
         clearInterval(timerRef.current);
       }
     };
-  }, [currentIndex, images, handleNext, handlePrev, resetTimer]);
+  }, [currentIndex, images]);
 
   return (
     <main className="min-h-screen bg-gray-900">
@@ -139,8 +139,8 @@ export default function Home() {
               <Image
                 src={images[currentIndex]}
                 alt="Hero Background"
-                layout="fill"
-                objectFit="cover"
+                fill
+                style={{ objectFit: "cover" }}
                 priority
               />
             </motion.div>
@@ -266,5 +266,5 @@ export default function Home() {
       <GoogleMaps />
       <Footer />
     </main>
-    );
+  );
 }

@@ -24,11 +24,7 @@ const Card = ({ cards }: CardProps) => {
     // Update number of cards to show based on screen width
     useEffect(() => {
         const updateCardsToShow = () => {
-            if (window.innerWidth < 640) {
-                setCardsToShow(1);
-            } else {
-                setCardsToShow(3);
-            }
+            setCardsToShow(window.innerWidth < 640 ? 1 : 3);
         };
         updateCardsToShow();
         window.addEventListener("resize", updateCardsToShow);
@@ -64,7 +60,6 @@ const Card = ({ cards }: CardProps) => {
         return () => {
             if (timerRef.current) clearInterval(timerRef.current);
         };
-        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
     const handleNext = () => {
@@ -96,7 +91,7 @@ const Card = ({ cards }: CardProps) => {
             </button>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 mx-auto">
                 <AnimatePresence mode="wait">
-                    {visibleCards.map((card, index: number) => (
+                    {visibleCards.map((card, index) => (
                         <motion.div
                             key={card.title + index}
                             custom={direction}
@@ -140,9 +135,6 @@ const Card = ({ cards }: CardProps) => {
             >
                 <FaAngleRight />
             </button>
-            <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex gap-4">
-
-            </div>
         </div>
     );
 };
