@@ -20,9 +20,26 @@ export default function Home() {
 
   const cards = [
     {
-      imageUrl: "/card1.png",
-      imageAlt: "Strength Training",
-      title: "Strength Training",
+      imageUrl: "https://images.pexels.com/photos/3917665/pexels-photo-3917665.jpeg?auto=compress&cs=tinysrgb&w=600",
+      imageAlt: "Cardio Training",
+      title: "Cardio Training",
+      description:
+        "Personal training is a one-on-one session with a trainer who will create a customized workout plan for you based on your goals, fitness level, and preferences.",
+      lastUpdated: "2024-01-01",
+    },
+
+    {
+      imageUrl: "https://images.pexels.com/photos/17782849/pexels-photo-17782849/free-photo-of-bald-man-bodybuilding-at-gym.jpeg?auto=compress&cs=tinysrgb&w=600",
+      imageAlt: "Muscle Gaining",
+      title: "Muscle Gaining",
+      description:
+        "Personal training is a one-on-one session with a trainer who will create a customized workout plan for you based on your goals, fitness level, and preferences.",
+      lastUpdated: "2024-01-01",
+    },
+    {
+      imageUrl: "https://images.pexels.com/photos/2827392/pexels-photo-2827392.jpeg?auto=compress&cs=tinysrgb&w=600",
+      imageAlt: "Weight control",
+      title: "Weight control",
       description:
         "Personal training is a one-on-one session with a trainer who will create a customized workout plan for you based on your goals, fitness level, and preferences.",
       lastUpdated: "2024-01-01",
