@@ -173,8 +173,8 @@ export default function Home() {
           </AspectRatio>
 
           {/* Hero Text Overlay */}
-          <div className="absolute inset-0 z-20 flex flex-col items-center justify-center text-center text-white px-4">
-            <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-bold">
+          <div className={`absolute inset-0 z-20 flex flex-col items-center justify-center text-center text-white px-4 ${isMobile ? "mt-2": ""}`}>
+            <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-bold pt-4">
               Transform Your Body
               <br />
               Transform Your Life
